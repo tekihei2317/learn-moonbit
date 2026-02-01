@@ -58,4 +58,34 @@ main関数の実行について。`<dir>/moon.pkg.json`が`"is_main": true`の�
 
 ### [Moonbit の宣言的UIライブラリ Rabbit-TEA を試してみる](https://zenn.dev/mizchi/articles/try-moonbit-rabbit-tea)
 
-（続きここから）
+「model~ はキーワード引数 model=model の省略形。」これ知らなかった。
+
+ライブラリのドキュメントあんまりないので、少し複雑なことをしようとすると、ソースコード読んでなんとかする必要があるかも。
+
+非同期周りはまだ知らないけど、タイマー実装するためには必要なので、理解しておきたい。
+
+### [Moonbit がもう少しで実用できそうな気配](https://zenn.dev/mizchi/articles/how-to-write-moonbit)
+
+「CLIでHTTPリクエストを投げて、JSONパースして表示する」をできたら最低限揃っているはず。
+
+> 環境変数を取得する moonbitlang/x/sys の @sys.get_env_vars()
+
+> 引数を参照する moonbitlang/core/env の @env.args()
+
+> HTTP Request を送る moonbitlang/async/http の @http.post
+
+> JSON をパースして struct にマッピングする derive(FromJson, ToJSon)
+
+引数の取得はは`@sys`を使った記憶がある。deriveのtypoがある。Webアプリ作るとなると、HTTPリクエスト関連の便利ライブラリ欲しいな、という気持ちになりそう。
+
+言語仕様の調べ方、のセクションに色々情報がまとめられているので、迷ったらここら辺を見よう。
+
+Moonbit Tourは最後の方がまだ見れていない（ジェネリクス、Traitのところ）。
+
+Weekly Updateも迷ったら見るといいらしい。
+
+moobitlang/coreにあるコードは大体正しいので、迷ったらこれをAIに読ませたらよいとのこと。
+
+Rabbit-TEA作ってるYoorkinさん、コア開発者なんだ。
+
+Moonbit Tourだけの知識でこちらの記事のコードは書けないので、コードを色々読んで調べていこう。
