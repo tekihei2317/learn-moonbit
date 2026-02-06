@@ -1,3 +1,9 @@
 {
-  "is-main": true
+  "is-main": true,
+  "import": [
+    {
+      "path": "tekihei2317/add",
+      "alias": "add"
+    }
+  ]
 }

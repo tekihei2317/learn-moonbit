@@ -1,3 +1,9 @@
 {
-  "name": "tekihei2317/hello"
+  "name": "tekihei2317/hello",
+  "deps": {
+    "Yoorkin/example/list": "0.1.4",
+    "tekihei2317/add": {
+      "path": "../add"
+    }
+  }
 }

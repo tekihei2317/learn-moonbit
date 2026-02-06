@@ -128,3 +128,57 @@ mooncakes.ioの使い方が書いているので、読む。
 `moon new`でプロジェクトを作成する。最小構成のものはあるかな。画像だといろいろ選択できるように見えるんだけど、`moon new`したらいきなりいろいろ作られた。テンプレート選択機能みたいなのが欲しい。
 
 とりあえず手動でhelloプロジェクトを作成してみる。moon.mod.jsonを作る、nameは必須。
+
+モジュールを追加するには、`moon add <module>`を使うか、`moon.mod.json`を手動で編集する。
+
+```bash
+moon add Yoorkin/example/list
+```
+
+階層が複数に区切られているのが気になる。npmは`username/package`とかだったけど、自由なんだろうか。
+
+`.mooncakes`ディレクトリに型検査が走ってエラーが出ているのが気になる。
+
+ローカルな依存をインストールすることもできる。`moon.mod.json`に、依存の名前と相対パスを書く。
+
+パッケージのバージョンを指定し忘れているとクラッシュしたので、バージョンの指定が必要。
+
+インポートするときには、モジュールじゃなくてパッケージのパスを指定するので、`username/package/module`みたいになりそう。
+
+`Yoorkin/example/list`はモジュール兼パッケージになっているのかな。試してみたらそういうのもできるっぽい。
+
+パッケージをインポートするときは、パッケージのパスの/で区切られた最後のパートが`@package`みたいな感じで使える。エイリアスをつけることもできる。
+
+`Yoorkin/example/list`を使ってみる。と思ったけど、言語のアップデートで動かなくなっているので、とりあえずOK。
+
+最後に、パッケージを公開する方法について。セマンティックバージョニングに従うこと。
+
+他にフィールドとしては、
+
+- license
+- keywords
+- repository
+- description
+- homepage
+
+などを主に指定する。
+
+`///`で、ドキュメンテーションコメントを書ける。
+
+---
+
+実際に作ってみよう。`hello`モジュールを作成する。
+
+- GitHubリポジトリを作る。`hello.mbt`とかでOK。
+- `moon.pkg.json`を書く。パッケージ名、バージョン、ライセンス、リポジトリ、説明、ホームページを記入する。
+- `moon.mod.json`を書く。これもトップレベルに置いていいかな。
+- `@hello.hello_world`、`@hello.greeting(name)`みたいな関数を作る。
+- ドキュメンテーションコメントを書く。
+- mooncakes.ioに公開する。
+
+できた。
+
+- [tekihei2317/hello.mbt](https://github.com/tekihei2317/hello.mbt)
+- [mooncakes.io](https://mooncakes.io/docs/tekihei2317/hello)
+
+mooncakes.ioの方の反映には、しばらく時間がかかるっぽい。
