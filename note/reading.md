@@ -89,3 +89,19 @@ moobitlang/coreにあるコードは大体正しいので、迷ったらこれ�
 Rabbit-TEA作ってるYoorkinさん、コア開発者なんだ。
 
 Moonbit Tourだけの知識でこちらの記事のコードは書けないので、コードを色々読んで調べていこう。
+
+### [MoonBit で JS FFI を書こう！](https://zenn.dev/mizchi/articles/moonbit-js-ffi)
+
+Moonbitでjs backendを使う場合のことが書かれているっぽい。公式のおすすめ記事が紹介されている。
+
+MoonbitはJS以外にもwasm、nativeのコードを生成できるが、jsはブラウザ・サーバーと適用領域が広いので、まずはjsから運用していけばよい。
+
+`"preferred_target": "js"`を設定すると、`moon build`や`moon test`で`--target js`を省略できる。
+
+JSを出力する場合は、`main`関数をエントリポイントに指定するか、指定したシンボルをexportするかの2つの方法がある。それぞれの設定方法は記事参照。
+
+`extern "js"`でjs backendのときにのみ使える関数を定義する。
+
+生成コードのことを全然イメージしていなかったけど、最初は確認した方がよいみたいだ。そりゃそうか。
+
+`%identity`のところで一気にわからなくなった。CodexもMoonbitでJSの機能を使うときに苦戦していた、scriptタグに頑張って書いてたりしていたので、このあたりは先述の公式の記事を読んで勉強しておこう。
