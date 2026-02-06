@@ -105,3 +105,26 @@ JSを出力する場合は、`main`関数をエントリポイントに指定す
 生成コードのことを全然イメージしていなかったけど、最初は確認した方がよいみたいだ。そりゃそうか。
 
 `%identity`のところで一気にわからなくなった。CodexもMoonbitでJSの機能を使うときに苦戦していた、scriptタグに頑張って書いてたりしていたので、このあたりは先述の公式の記事を読んで勉強しておこう。
+
+### [Introducing MoonBit package manager: mooncakes.io | MoonBit](https://www.moonbitlang.com/blog/intro-to-mooncakes)
+
+mooncakes.ioの使い方が書いているので、読む。
+
+やっぱり、以下を読んだ方が良いかもしれない。
+
+### [MoonBit's Package Manager Tutorial — MoonBit v0.7.1 documentation](https://docs.moonbitlang.com/en/latest/toolchain/moon/package-manage-tour.html)
+
+- moon.mod.jsonが、公開するのに必要な最小の単位
+- モジュールの中に、パッケージが複数ある。パッケージは、`moon.pkg.json`のあるディレクトリのこと。
+- moon.pkg.jsonと同じ階層にある`.mbt`ファイルのみが、そのモジュールに属する？
+  - フラットパッケージ推奨ということかな？
+
+`moon register`、`moon login`でアカウント登録、ログインができる。
+
+とりあえず、自分のGitHubアカウントで登録してみる。
+
+`moon update`で、レジストリのインデックスを更新する。どのパッケージにどのバージョンがあって〜みたいな情報かな。
+
+`moon new`でプロジェクトを作成する。最小構成のものはあるかな。画像だといろいろ選択できるように見えるんだけど、`moon new`したらいきなりいろいろ作られた。テンプレート選択機能みたいなのが欲しい。
+
+とりあえず手動でhelloプロジェクトを作成してみる。moon.mod.jsonを作る、nameは必須。
