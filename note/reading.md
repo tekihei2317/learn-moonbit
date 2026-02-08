@@ -182,3 +182,32 @@ moon add Yoorkin/example/list
 - [mooncakes.io](https://mooncakes.io/docs/tekihei2317/hello)
 
 mooncakes.ioの方の反映には、しばらく時間がかかるっぽい。
+
+### [MoonBit 最高 2025](https://zenn.dev/mizchi/articles/moonbit-is-good-2025)
+
+
+関数パイプライン使ったことなかった。F#スタイルで、値が第一引数として渡される。
+
+`assert_eq(add(1, 2), 3)`を`1 |> add(2) |> assert_eq(3)`みたいに書ける。
+
+引数は、`a~`がキーワード引数で、`b?`はオプショナルなキーワード引数。オプショナルにしたら自動的にキーワード引数になったはず。
+
+キーワード引数は、`fn(a=value)`のように呼び出す。また、`fn(a=a)`は`fn(a~)`と書ける。
+
+inspectのcontentはインラインスナップショットと呼ばれる機能。`moon test -u`を実行すれば、`content`の中身が自動で埋められる。
+
+これテストの値を変えたときに自分で書き換えなくていいから便利。`content`が目的のものになっているか確認すればOK。
+
+Enumは値として使うときは`Action::Increment`みたいに書けばいいのか。知らなかった。
+
+例外についてはこれから公式ドキュメントを読む。例外を起こす関数はraiseシグネチャをつける必要がある。raiseをつけていない関数は、全ての例外を処理しなければならない。
+
+> 一番信頼できる情報源が Weekly Update と moonbitlang/core の実装です。
+
+> コア開発者らのパッケージである　moonbitlang, bobzhang, tonyfettes, peter-jerry-ye, illusory0x0　氏らが比較的品質が高いです。
+
+ここは頭の片隅に置いておこう。
+
+> 真面目に設計しようとすると、TypeScript 的な Union ではなく Rust 的なtrait と enum で考える必要があります。
+
+最後の感想が書かれているところ。traitを使ったことがないから分からないけど、そうらしい。
