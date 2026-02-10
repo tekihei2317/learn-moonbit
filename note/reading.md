@@ -211,3 +211,21 @@ Enumは値として使うときは`Action::Increment`みたいに書けばいい
 > 真面目に設計しようとすると、TypeScript 的な Union ではなく Rust 的なtrait と enum で考える必要があります。
 
 最後の感想が書かれているところ。traitを使ったことがないから分からないけど、そうらしい。
+
+### [Moonbit moon cli の便利機能達 - 組み込み lint, bench, snapshot, coverage, doc](https://zenn.dev/mizchi/articles/moonbit-useful-tips)
+
+`moon check`について。リンター。
+
+未使用変数などでも警告が出る。
+
+警告をエラーにする設定が`--deny-warn`。
+
+また、どれをwarningにするかの設定もできる。設定項目は、`moonc build-package -warn-help`で確認できる。
+
+コメントに対してテストを実行したり、ドキュメント`*.mbt.md`に対してテストを実行することもできる。これは実際に試してみよう。
+
+`moon coverage`がある。
+
+`moon doc StringView`などで、型のメソッド一覧が見れる。マジですか。エージェントに教えておいた方が良い。これは標準ライブラリ以外でも確認できるんだろうか。
+
+`moon bench`でベンチマークが取れる。パフォーマンスを改善したい場合に使おう。
