@@ -1,0 +1,8 @@
+import {
+  "Yoorkin/rabbit-tea" @tea,
+  "Yoorkin/rabbit-tea/html",
+}
+
+options(
+  "is-main": true,
+)
