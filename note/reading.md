@@ -229,3 +229,39 @@ Enumは値として使うときは`Action::Increment`みたいに書けばいい
 `moon doc StringView`などで、型のメソッド一覧が見れる。マジですか。エージェントに教えておいた方が良い。これは標準ライブラリ以外でも確認できるんだろうか。
 
 `moon bench`でベンチマークが取れる。パフォーマンスを改善したい場合に使おう。
+
+### [MoonBit 0.8.0 Released | MoonBit](https://www.moonbitlang.com/blog/moonbit-0-8-0-release)
+
+Moonbit 0.8.0がリリースされたみたいなので、読む。
+
+ちょっとした変化ではなく、いろいろな面で変化があったと書かれている。
+
+language semantics, error handling, package manegement, developer tooling
+
+package managementは、`moon.pkg.json`から`moon.pkg`に変わっていたような気がする。多分`moon fmt`で修正されたのかなと思ってた。それぞれの要素を確認していこう。
+
+AIのサポートについて。これ面白いな。`declare`キーワードで、これから実装するものを定義することができる。実装がまだだとwarningが出るので、AIはそのwarningを見ながら、少しずつ仕様を満たすように開発を進めることができる。
+
+具体的にどのようにやるのかは書かれていないが、試してみたい。
+
+**Language Update**
+
+suberrorの定義の方法が変わった？
+
+全体的に知らないことが多くて理解できていない。
+
+wasm-gc / native / LLVM backendで、panicした時のスタックトレースが見れるようになった。
+
+declareの使い方も書いてある。型を定義したり、関数を定義したり。traitは知らない。
+
+forのrange expressionが、逆向きも使えるようになっている。`0..<=4` ←→ `4>=..0`、`0..<4` ←→ `4>..0`かな。`x..=y`は、一貫性のために`x..<=y`に変わった。
+
+structのスプレッドが、`priv`フィールドがある場合に、他のパッケージで使えなくなった。
+
+`lexmuch`なんていうのがあるんだ...
+
+StructのConstructorを定義できるようになった？今まではどうだったんだろう。詳細が色々書かれているが読み飛ばす。
+
+Debugトレイトが追加された。DebugトレイトはShowトレイトの発展版で、読みやすく整形してくれる。ignoreを指定して、特定のフィールドを省略できる。これは、そのフィールドが他のライブラリの値を持っていて、それらにDebugトレイトを付与できない場合に有用。
+
+12.が続きから。これwarningが出たから修正したところだ。
